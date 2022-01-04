@@ -8,54 +8,19 @@ namespace GeekBrains.OOP.Lesson2.Task1
 {
     class BankBill
     {
-        private readonly long _BillNumber;
-        private readonly  double _Balance;
-        private readonly BillTypes _TheBillTypes;
-        private static long LastBillNumber;
-
-        internal BankBill(): this(BillTypes.CompanyBill)
-        {
-            GenerateBillNumber();
-            Console.Write("The Last Number is: "+LastBillNumber);
-        }
-        internal BankBill(BillTypes types) : this(5555, BillTypes.CompanyBill)
-        {
-            GenerateBillNumber();
-            Console.Write("The Last Number is: " + LastBillNumber);
-        }
-        internal BankBill (int balance, BillTypes types)
-        {
-            _Balance = balance;
-            _TheBillTypes = types;
-            GenerateBillNumber();
-            Console.Write("The Last Number is: " + LastBillNumber + " Balance: " +_Balance+" BillTypes: "+_TheBillTypes);
-        }
-
+        internal long BillNumber {get; set; }
+        internal double Balance {get; set; }
 
         internal enum BillTypes{
              CompanyBill,
              PrivateBill
         }
+        private BillTypes _BillTypes;
 
-
-        internal long GetBillNumber()
+        internal BillTypes CurrentBillTypes
         {
-            return _BillNumber;
-        }
-
-        internal double GetBalance()
-        {
-            return _Balance;
-        }
-
-        internal BillTypes GetBillTypes()
-        {
-            return _TheBillTypes;
-        }
-
-        internal long GenerateBillNumber()
-        {
-            return LastBillNumber++;
+            get { return _BillTypes; }
+            set { _BillTypes = value; }
         }
     }
 }

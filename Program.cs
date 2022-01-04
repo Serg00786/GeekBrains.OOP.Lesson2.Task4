@@ -11,6 +11,10 @@ namespace GeekBrains.OOP.Lesson2.Task1
         static void Main(string[] args)
         {
             BankBill bankBill = new BankBill();
+            bankBill.Balance = 1111;
+            bankBill.BillNumber = 22222;
+            bankBill.CurrentBillTypes = BankBill.BillTypes.CompanyBill;
+
             Console.ReadKey();
         }
     }
